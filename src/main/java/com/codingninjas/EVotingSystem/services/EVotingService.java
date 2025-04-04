@@ -66,15 +66,17 @@ public class EVotingService {
     public boolean AlreadyGivenVote(Long userId, Long electionId) {
 //        User user = userRepository.findById(userId).get();
 //        Election election = electionRepository.findById(electionId).get();
-        Vote vote = voteRepository.findByUserIdAndElectionId(userId,electionId);
+//        Vote vote = voteRepository.findByUserIdAndElectionId(userId,electionId);
 //        List<Vote> allVote = election.getVotes();
 //        for (Vote vote : allVote){
 //            if (vote.getUser() == user) return true;
 //        }
-        if(vote == null){
-            return false;
-        }
-        return true;
+//        if(vote == null){
+//            return false;
+//        }
+//        return true;
+
+        return voteRepository.existsByUser_IdAndElection_Id(userId,electionId);
     }
 
     public List<Election> getAllElections() {

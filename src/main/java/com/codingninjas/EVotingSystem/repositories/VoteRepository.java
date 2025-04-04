@@ -13,5 +13,7 @@ public interface VoteRepository extends JpaRepository<Vote, Long> {
     long countVotesByElectionName(@Param("electionName") String electionName);
 
 
-    Vote findByUserIdAndElectionId(Long userId, Long electionId);
+//    Vote findByUserIdAndElectionId(Long userId, Long electionId);
+
+    boolean existsByUser_IdAndElection_Id(Long userId, Long electionId);
 }
